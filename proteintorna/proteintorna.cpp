@@ -32,15 +32,15 @@ void protein(std::string seq)
 	int k = seq.size();
 	int a = 0;
 	std::vector<int> pos(k);
-	std::ofstream proteins{ "result.txt" };
+	std::ofstream rna{ "result.txt" };
 	while (a != k)
 	{
 		a = 0;
 		for (int i = 0; i < k; i++)
 		{
-			proteins << Gcod[seq[i]][pos[i]];
+			rna << Gcod[seq[i]][pos[i]];
 		}
-		proteins << "\n";
+		rna << "\n";
 		for (int j = 0; j < k; j++)
 		{
 			if (pos[j] == Gcod[seq[j]].size() - 1)
@@ -53,7 +53,7 @@ void protein(std::string seq)
 			break;
 		}
 	}
-	proteins.close();
+	rna.close();
 }
 
 int main()
